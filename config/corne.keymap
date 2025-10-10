@@ -16,8 +16,7 @@
 #define SYM_LEFT 3
 #define NUM 4
 #define UTIL 5
-#define AERO 6
-#define SYS 7
+#define SYS 6
 
 #define QUICK_TAP_MS 175
 
@@ -32,7 +31,6 @@
 #define _1PASS &kp LG(LS(SPACE))
 
 // Sticky mods - named explicitly here because I forget what they're are
-#define _SK_AERO &sk LS(LALT)
 #define _SK_MEH &sk LC(LS(LALT))
 #define _SK_HYPR &sk LG(LC(LS(LALT)))
 
@@ -58,11 +56,29 @@
 	combos {
 		compatible = "zmk,combos";
 
-		// left ring and index finger
-		combo_aero {
+		// both right thumb keys
+		combo_sys {
 			timeout-ms = <200>;
-			key-positions = <11 12>;
-			bindings = <&mo AERO>;
+			key-positions = <39 40>;
+			bindings = <&mo SYS>;
+		};
+		// left index and middle finger
+		combo_esc {
+			timeout-ms = <50>;
+			key-positions = <15 16>;
+			bindings = <&kp ESC>;
+		};
+		// right index and middle finger one row down
+		combo_meh {
+			timeout-ms = <50>;
+			key-positions = <31 32>;
+			bindings = <&kp LC(LS(LALT))>;
+		};
+		// right middle and ring finger one row down
+		combo_hypr {
+			timeout-ms = <50>;
+			key-positions = <32 33>;
+			bindings = <&kp LG(LC(LS(LALT)))>;
 		};
 	};
 
@@ -180,25 +196,6 @@
       ____   ____   _1PASS      _RAYCAST    &kp ESC    ____                     ____   &sk LGUI      &sk LCTL    &sk LSHIFT     &sk LALT   ____
       ____   ____   ____        ____        ____       ____                     ____   _SK_MEH       _SK_HYPR    ____           ____       ____
                                             ____       ____   ____       _XXX   ____   ____
-      >;
-    };
-
-    aero {
-      display-name = "aero";
-      bindings = <
-//        ┌──────┬──────┬──────┬──────┬──────────┬──────┐                 ┌────────────┬─────────────┬───────────┬─────────────┬──────┬──────┐
-//        │ ____ │ ____ │ ____ │ ____ │   ____   │ ____ │                 │    ____    │ _HYPR(left) │ _HYPR(up) │ _HYPR(rght) │ ____ │ ____ │
-//        ├──────┼──────┼──────┼──────┼──────────┼──────┤                 ├────────────┼─────────────┼───────────┼─────────────┼──────┼──────┤
-//        │ ____ │ ____ │ _XXX │ _XXX │ _SK_AERO │ ____ │                 │ lalt(left) │ lalt(down)  │ lalt(up)  │ lalt(rght)  │ ____ │ ____ │
-//        ├──────┼──────┼──────┼──────┼──────────┼──────┤                 ├────────────┼─────────────┼───────────┼─────────────┼──────┼──────┤
-//        │ ____ │ ____ │ ____ │ ____ │   ____   │ ____ │                 │    ____    │  lalt(tab)  │   ____    │    ____     │ ____ │ ____ │
-//        └──────┴──────┴──────┴──────┼──────────┼──────┼──────┐   ┌──────┼────────────┼─────────────┼───────────┴─────────────┴──────┴──────┘
-//                                    │   ____   │ ____ │ ____ │   │ ____ │    ____    │    ____     │
-//                                    └──────────┴──────┴──────┘   └──────┴────────────┴─────────────┘
-      ____   ____   ____   ____   ____       ____                     ____           _HYPR(LEFT)    _HYPR(UP)    _HYPR(RIGHT)    ____   ____
-      ____   ____   _XXX   _XXX   _SK_AERO   ____                     &kp LA(LEFT)   &kp LA(DOWN)   &kp LA(UP)   &kp LA(RIGHT)   ____   ____
-      ____   ____   ____   ____   ____       ____                     ____           &kp LA(TAB)    ____         ____            ____   ____
-                                  ____       ____   ____       ____   ____           ____
       >;
     };
 
