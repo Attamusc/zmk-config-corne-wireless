@@ -14,20 +14,20 @@
 ---
 include:
   # dongle MX corne
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: corne_central_dongle
     snippet: zmk-usb-logging
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_peripheral_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_peripheral_right
   # bluetooth LP corne
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_left nice_view_adapter nice_view
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_right nice_view_adapter nice_view
   # resets
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
